@@ -1,5 +1,9 @@
-/* messageCreator.js */
 
+/* 
+
+For MessageCreator component
+
+*/
 .msgContainer {
   display: inline-block;
   width: 30%;
@@ -15,7 +19,6 @@
   margin: auto;
   top: 30%;
   width: 20vw;
-  /* height: 20vh; */
   box-shadow: 0 19px 38px -6px rgba(0,0,0, 0.27), 0 15px 12px -6px rgba(0,0,0, 0.27);
   color: black;
 }
@@ -24,7 +27,7 @@
   width: 100%;
   border: none;
   border-bottom: 2px solid rgb(1, 94, 27);
-  font-size: 24px;
+  font-size: 20px;
   margin-bottom: 10px;
   padding: 5px;
 }
@@ -37,6 +40,7 @@ button {
   min-width: 100%;
   padding: 5px;
   cursor: pointer;
+  margin-top: 10px;
 }
 
 button:hover {
@@ -49,8 +53,32 @@ button:hover {
   color: rgb(1, 94, 27);
 }
 
+.clearBtnDiv {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
 
-/* allMessages.js */
+.clearBtn {
+  background: white;
+  color: rgb(1, 94, 27);
+  border: none;
+  box-shadow: 0 19px 38px -6px rgba(0,0,0, 0.27), 0 15px 12px -6px rgba(0,0,0, 0.27);
+}
+
+
+
+
+
+
+
+/* 
+
+For AllMessages component
+
+*/
+
+
 .messagesContainer {
   display: inline-block;
   width: 70%;
@@ -62,19 +90,19 @@ button:hover {
 
 table {
   margin: auto;
-  width: 60%;
+  /* width: 80%; */
   margin-top: 50px;
   margin-bottom: 50px;
 
 }
 table > tbody > tr > td {
-  font-size: 26px;
+  font-size: 20px;
   color: rgb(1, 94, 27);
   padding: 20px;
 }
 td:first-child {
   font-weight: bold; 
-  width: 30%; 
+  /* width: 50%;  */
   text-align: left;
 }
 td:first-child > img {
@@ -83,5 +111,10 @@ td:first-child > img {
 
 td:last-child {
   text-align: left;
-  width: 70%; 
+  max-width: 30vw; 
+}
+
+.warning {
+  color: red;
+  margin: 0;
 }
