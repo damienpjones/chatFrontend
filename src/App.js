@@ -1,25 +1,37 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import MessageCreator from './components/messageCreator'
+import AllMessages from './components/allMessages'
+
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+      this.state = {
+      username: '',
+      usernameWarning: '',
+      messages: [        
+        { username: 'a@b.se', msg: 'hello world'},
+        { username: 'c@d.se', msg: 'hi there'},
+        { username: 'a@b.se', msg: 'hello world'},
+        { username: 'c@d.se', msg: 'hi there'},
+        { username: 'a@b.se', msg: 'hello world'},
+        { username: 'c@d.se', msg: 'hi there'}
+      ]
+      }
+  }
+
+  sendMsg = (username, msg) => {
+    // add msg from input to list of msgs
+    let messages = this.state.messages.concat({username: username, msg: msg})
+    this.setState({messages: messages})
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <MessageCreator sendMsg={this.sendMsg}></MessageCreator>
+        <AllMessages messages={this.state.messages}></AllMessages>      
       </div>
     );
   }
